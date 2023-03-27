@@ -1,9 +1,10 @@
 body {
-    /* background: url(../images/Frosthaven_map.jpg), no-repeat;
-    background-size: cover; */
-    background-color: lightblue;
+    background-color: #79c5dd;
 }
+
 .frosthaven img {
+    max-width: calc(100% - 10rem);
+    margin: 2rem auto;
     transition: 0.5s;
 }
 .frosthaven img:hover {
@@ -55,10 +56,12 @@ p {
     margin: calc(17rem - 2%) 1rem;
 }
 .card--top {
+    max-width: 12rem;
     position: relative;
     overflow: hidden;
 }
 .card--bottom {
+    max-width: 12rem;
     grid-column: 3;
     animation: shuffle 5s alternate-reverse infinite;
 }
@@ -203,7 +206,15 @@ a.order {
         flex-wrap: nowrap;
     }
 }
+@media screen and (min-width: 500px) {
+    .frosthaven img {
+        max-width: calc(100% - 42rem);
+    }
+    }
 @media screen and (min-width: 740px) {
+    .frosthaven img {
+        max-width: calc(100% - 25rem);
+    }
     .characters--bottom--visible {
         position: absolute;
         grid-template-columns: 1fr;
@@ -216,4 +227,20 @@ a.order {
         grid-template-areas: 
         "char1 char2 char3 char4 char5 char6";
     }   
+}
+@media screen and (min-width: 900px) {
+    .woodenpost {
+        height: calc(100% + 100%);
+    }
+}
+@media screen and (min-width: 1000px) {
+.frosthaven img {
+    max-width: calc(100% - 46rem);
+}
+.woodenpost {
+    height: calc(100% + 184%);
+}
+.fence {
+    height: calc(100% + 184%);
+}
 }
