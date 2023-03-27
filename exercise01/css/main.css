@@ -1,0 +1,219 @@
+body {
+    /* background: url(../images/Frosthaven_map.jpg), no-repeat;
+    background-size: cover; */
+    background-color: lightblue;
+}
+.frosthaven img {
+    transition: 0.5s;
+}
+.frosthaven img:hover {
+    transform: rotate(15deg);
+}
+.map {
+    background-image: url(../images/Frosthaven_map.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 22rem;
+    padding: 2rem;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+p {
+    background-image: linear-gradient(white, lightblue, rgb(98, 143, 158));
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.25rem;
+    min-width: 5rem;
+}
+.frosthaven p {
+    margin: 0;
+    border-radius: 0;
+}
+.monsters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.monster {
+    max-width: 6rem;
+    
+}
+.algox1 {
+    animation: hop 3s infinite;
+}
+.imp {
+    animation: hop 3s infinite 1s;
+}
+.algox2 {
+    animation: hop 3s infinite ;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 20vh;
+    margin: calc(17rem - 2%) 1rem;
+}
+.card--top {
+    position: relative;
+    overflow: hidden;
+}
+.card--bottom {
+    grid-column: 3;
+    animation: shuffle 5s alternate-reverse infinite;
+}
+.cards p{
+    text-align: center;
+    grid-column: span 2;
+}
+.characters {
+    margin: 2rem;
+    height: 42vh;
+}
+.characters--bottom--visible {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-areas: 
+    "char1 char2 char3" "char4 char5 char6";
+}
+.characters--bottom--invisible {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-areas: 
+    "char1 char2 char3" "char4 char5 char6";
+    z-index: -1;
+}
+.character--cards {
+    margin-left: 25%;
+}
+.character--front {
+    max-width: 100%;
+    height: 10rem;
+    transition: 1s;
+}
+.character--front:hover {
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+.character--back {
+    max-width: 100%;
+    height: 10rem;  
+}
+.fencepost {
+    display: grid;
+    grid-template-areas: "fence1 grate fence2";
+    overflow: hidden;
+    justify-content: space-between;
+}
+.woodenpost {
+    flex-shrink: 2;
+}
+.fence {
+    height: calc(100% + 100%);
+    transition: 5s;
+}
+.fence:hover {
+    transform: translateY(50vh);
+}
+a.order {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin: -7rem 8rem;
+    transition: 0.2s;
+    text-decoration: none;
+    color: darkblue
+}
+.order:hover {
+    color: white;
+    background-color: darkblue;
+}
+
+@keyframes shuffle {
+    0% {
+        transform: translateY(-10rem);
+        z-index: -1; 
+    }
+    50% {
+        transform: translateY(0rem); 
+        z-index: -1;
+    }
+    55% {
+        z-index: 2; 
+    }
+    100% {
+       transform: translateY(-10rem);
+       
+    }
+}
+@keyframes hop {
+    0% {
+        transform: translateY(0rem); 
+    }
+    10% {
+        transform: translateY(-1rem); 
+    }
+    20% {
+        transform: translateY(0rem); 
+    }
+    30% {
+        transform: translateY(-1rem);
+    }
+    40% {
+        transform: translateY(0rem);
+    }
+    100% {
+       transform: translateY(0rem);
+       
+    }
+}
+@media screen and (min-width: 324px) {
+    .characters--bottom--visible {
+        position: absolute;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: 
+        "char1 char2" "char3 char4" "char5 char6";
+    }
+    .characters--bottom--invisible {
+        position: absolute;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: 
+        "char1 char2" "char3 char4" "char5 char6";
+    }
+    
+}
+@media screen and (min-width: 400px) {
+    .characters--bottom--visible {
+        position: absolute;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+        "char1 char2 char3" "char4 char5 char6";
+    }
+    .characters--bottom--invisible {
+        position: absolute;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+        "char1 char2 char3" "char4 char5 char6";
+    }
+    .monsters {
+        margin-left: 18%;
+        gap: 2rem;
+        flex-wrap: nowrap;
+    }
+}
+@media screen and (min-width: 740px) {
+    .characters--bottom--visible {
+        position: absolute;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "char1 char2 char3 char4 char5 char6";
+    }
+    .characters--bottom--invisible {
+        position: absolute;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "char1 char2 char3 char4 char5 char6";
+    }   
+}
