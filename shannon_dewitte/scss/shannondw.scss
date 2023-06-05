@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+#shannondw {
+    // color orange: #EF7836
+    z-index: -10;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    background-color: black;
+    height: 1500vh;
+    padding: 2rem;  
+        .menu { 
+            display: none; 
+            ul{
+                display: flex;
+                gap: 4vw;
+                position: fixed;
+                bottom: 1rem;
+                li{
+                    list-style: none;
+                    //color: #EF7836;
+                    //border: 0.2rem #EF7836 solid;
+                    //width: 5rem;
+                    //height: 4rem;
+                    text-align: center;
+                    .button {
+                        height: 10vh;
+                        width: 15vw;
+                    }
+                    .fight_unactive {
+                        background-image: url(../images/buttons/fight_unactive.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        padding: 1rem 1rem 0rem 0rem;
+                        display: none;
+                    }
+                    .fight_active {
+                        background-image: url(../images/buttons/fight_active.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        padding: 1rem 1rem 0rem 0rem;
+                    }
+                    .act {
+                        background-image: url(../images/buttons/act.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        padding: 1rem 1rem 0rem 0rem;
+                    }
+                    .item {
+                        background-image: url(../images/buttons/Item.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        padding: 1rem 1rem 0rem 0rem;
+                    }
+                    .mercy {
+                        background-image: url(../images/buttons/mercy.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        padding: 1rem 1rem 0rem 0rem;
+                    }
+                }
+            }
+        }
+    p {
+        color: white;
+        font-size: 16px;
+        z-index: 7;
+    }
+    .dialogue{   
+        display: none;
+        text-align: center;
+        width: 90vw;
+        height: 10rem;
+        position: fixed;
+        // only if .convoBox has padding: 1; -> bottom: 12vh;
+        bottom: 18vh;
+        opacity: 0;
+    }
+    .kitty {
+        transform: scale(2);
+        position: fixed;
+        top: 8rem;
+        left: 45vw;
+        width: 8rem;
+        height: 16.4rem;
+        opacity: 0;
+        display: none;
+        z-index: -5;
+    }
+    .kitty--normal {
+        background-image: url(../images/kitty/normal.png);
+        background-repeat: no-repeat;
+        background-size: cover;  
+        display: none;  
+    }
+    .kitty--hurt {
+        background-image: url(../images/kitty/hurt.png);
+        background-repeat: no-repeat;
+        background-size: cover;    
+    }
+    .playerInfo{
+        display: none;
+        align-items: center;
+        gap: 5rem;
+        position: fixed;
+        bottom: 16vh;
+        width: 100vw;
+        height: 2rem;
+        p {
+            text-align: start;
+            opacity: 1;
+        }
+        .hp {
+            display: flex;
+            gap: 0.5rem;
+            .hitpoint_bar {
+                width: 3rem;
+                height: 1.5rem;
+                background-color: hsl(55, 94%, 57%);
+            }
+        }
+    }
+    .hitbox_fixes {
+        display: none;
+        .background--left {
+            width: 14.4rem;
+            height: 14.4rem;
+            background-color: black;
+            position: fixed;
+            bottom: 22vh;
+            left: 25vw;
+            z-index: 9;
+        }
+        .background--none {
+            width: 14.4rem;
+            height: 14.4rem;
+            position: fixed;
+            bottom: 22vh;
+            left: 40vw;
+        }
+        .background--right {
+            width: 14.4rem;
+            height: 14.4rem;
+            background-color: black;
+            position: fixed;
+            bottom: 22vh;
+            right: 28.8vw;
+            z-index: 9;
+        }
+    }
+    .convoBox {
+        display: none;
+        border: 0.2rem white solid;
+        background-color: black;
+        padding: 7rem;
+        width: 90vw;
+        height: 10rem;
+        position: fixed;
+        bottom: 22vh;  
+        opacity: -1; 
+        z-index: 5;
+    }
+    .fightBox {
+        display: none;
+        border: 0.2rem white solid;
+        padding: 7rem;
+        width: 90vw;
+        height: 10rem;
+        position: fixed;
+        bottom: 22vh;  
+        opacity: 1;
+        z-index: 10;
+        background-image: url(../images/fight_bar.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .hitLine {
+        height: 13.99rem;
+        width: 1rem;
+        background-color: white;
+        border: 0.2rem black solid;
+        position: fixed;
+        bottom: 22.4vh;
+        display: none;
+        z-index: 10;
+    }
+    .fish {
+        width: 5rem;
+        height: 5rem;
+        background-image: url(../images/battle_attacks/fish.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+        bottom: 20.5vh;
+        display: none;
+        z-index: 7;
+    }
+    .fish1, .fish3 {
+        left: 33.7vw;
+    }
+    .fish2, .fish4 {
+        transform: scaleX(-1);
+        right: 38vw;
+    }
+    .yarn {
+        width: 5rem;
+        height: 5rem;
+        background-image: url(../images/battle_attacks/yarn.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+        bottom: 22vh;
+        display: none;
+        z-index: 6;
+    }
+    .yarn1 {
+        left: 33.7vw;
+    }
+    .yarn2 {
+        right: 38vw;
+    }
+    .heart {
+        background-image: url(../images/heart.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 10;
+        display: none;
+        position: fixed;
+        bottom: 10rem;
+    }
+    .hitBox {
+        position: fixed;
+        left: calc(100% - 50vw);
+        width: 15rem;
+        height: 15rem;
+        border: white solid 0.2rem;
+    }
+    animation-iteration-count: 8;
+}
+@keyframes black_white_undertale {
+    0% {
+        background-color: white;
+        border-color: black;
+    }
+    12% {
+        background-color: black;
+        border-color: white;
+    }
+    25% {
+        background-color: white;
+        border-color: black;
+    }
+    37% {
+        background-color: white;
+        border-color: black;
+    }
+    50% {
+        background-color: black;
+        border-color: white;
+    }
+    62% {
+        background-color: white;
+        border-color: black;
+    }
+    75% {
+        background-color: black;
+        border-color: white;
+    }
+    100% {
+        background-color: white;
+        border-color: black;
+    }
+}
+@keyframes roll_undertale {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes left_to_right_undertale {
+    0% {
+        transform: translateX(0) scale(2);;
+    }
+    25% {
+        transform: translateX(2rem) scale(2);;
+    }
+    50% {
+        transform: translateX(-4rem) scale(2);;
+    }
+    100% {
+        transform: translateX(0) scale(2);;
+    }
+}
